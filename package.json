@@ -1,0 +1,25 @@
+{
+  "name": "group2",
+  "version": "1.0.0",
+  "description": "Midterm exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ejiejing000/group2_sec-c.git"
+  },
+  "keywords": [
+    "midterm"
+  ],
+  "author": "group 2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ejiejing000/group2_sec-c/issues"
+  },
+  "homepage": "https://github.com/ejiejing000/group2_sec-c#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
