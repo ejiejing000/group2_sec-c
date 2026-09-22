@@ -39,3 +39,28 @@ router.get("/:id", (req, res) => {
     res.status(200).json(response);
 });
 
+router.post('/', (req, res) => {
+    const { name, type } = req.body;
+
+    if (!name || !type) {
+        return res.status(400).json({
+            success: false,
+            error: { code: "BAD_REQUEST", message: "Missing required fields" }
+        });
+    }
+
+    const newCategory = {
+        id: categories.length + 1,
+        name,
+        type
+    };
+    categories.push(newCategory);
+    // console.log(newCategory);
+
+    res.status(201).json({
+        success: true,
+        data: [newCategory],
+        meta: { timestamp: new Date().toISOString(), count: 1 }
+    });
+});
+
