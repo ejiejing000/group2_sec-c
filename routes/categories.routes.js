@@ -64,3 +64,19 @@ router.post('/', (req, res) => {
     });
 });
 
+router.delete("/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    let categoryIndex = categories.findIndex(cat => cat.id === id);
+
+    if (categoryIndex === -1) {
+        return res.status(404).json({
+            success: false,
+            error: { code: "NOT_FOUND", message: "Category not found" }
+        });
+    }
+
+    categories.splice(categoryIndex, 1);
+    res.status(204).send();
+});
+
+module.exports = router;
