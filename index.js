@@ -5,7 +5,12 @@ const app = express();
 app.use(express.json());
 
 app.use('/api/users', require('./routes/users.routes'));
+app.use('/api/products', require('./routes/products.routes'));
 app.use('/api/categories', require('./routes/categories.routes'));
+app.use('/api/reviews', require('./routes/reviews.routes'));
+app.use('/api/orders', require('./routes/orders.routes'));
+app.use('/api/suppliers', require('./routes/suppliers.routes'));
+
 
 app.use((req, res) => {
 res.status(404).json({
